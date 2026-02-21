@@ -1,356 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Joel Joy | Automotive Super Car Designer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joel Joy | Graphic Designer</title>
+  <style>
+    /* Google Fonts for modern typography */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<style>
-:root {
-  --bg: #050816;
-  --glass: rgba(255,255,255,0.05);
-  --neon: #00f0ff;
-  --accent: #ff2e63;
-  --text-soft: #a0aec0;
-}
+    body {
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+      background-color: #fff8e1; /* soft honey background */
+      color: #333;
+    }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at 20% 30%, rgba(0,240,255,0.15), transparent 40%),
-              radial-gradient(circle at 80% 70%, rgba(255,46,99,0.15), transparent 40%),
-              var(--bg);
-  color: white;
-}
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
 
-/* Container */
-.container {
-  width: 90%;
-  max-width: 1150px;
-  margin: auto;
-}
+    /* Header */
+    header {
+      background-color: #ffda44; /* bumblebee yellow */
+      padding: 20px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-/* Header */
-header {
-  padding: 20px 0;
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(15px);
-  background: rgba(0,0,0,0.3);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 10px;
+    }
 
-.logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 1px;
-  color: var(--neon);
-  text-shadow: 0 0 12px var(--neon);
-}
+    nav a {
+      font-weight: 600;
+      transition: color 0.3s;
+    }
 
-nav a {
-  margin-left: 25px;
-  text-decoration: none;
-  color: white;
-  position: relative;
-  transition: 0.3s;
-}
+    nav a:hover {
+      color: #333;
+    }
 
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -4px;
-  background: var(--neon);
-  transition: 0.3s;
-}
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 20px;
+    }
 
-nav a:hover::after {
-  width: 100%;
-}
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
 
-nav a:hover {
-  color: var(--neon);
-}
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
 
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 140px 20px 100px;
-}
+    .btn {
+      background-color: #333;
+      color: #ffda44;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s;
+    }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  background: linear-gradient(90deg, var(--neon), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+    .btn:hover {
+      background-color: #ffda44;
+      color: #333;
+    }
 
-.hero p {
-  color: var(--text-soft);
-  max-width: 650px;
-  margin: auto;
-  margin-bottom: 40px;
-  font-weight: 300;
-}
+    /* About Section */
+    #about {
+      padding: 80px 20px;
+      background-color: #fff3b0;
+    }
 
-.btn {
-  display: inline-block;
-  padding: 14px 32px;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: 500;
-  background: linear-gradient(90deg, var(--neon), var(--accent));
-  color: white;
-  transition: 0.4s ease;
-  box-shadow: 0 0 20px rgba(0,240,255,0.4);
-}
+    #about .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-.btn:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 35px rgba(255,46,99,0.6);
-}
+    #about img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+    }
 
-/* Sections */
-section {
-  padding: 100px 0;
-}
+    #about .about-text {
+      max-width: 500px;
+    }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 60px;
-  font-size: 2.2rem;
-  color: var(--neon);
-  text-shadow: 0 0 12px rgba(0,240,255,0.4);
-}
+    #about h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
 
-/* About */
-.about-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  text-align: center;
-}
+    #about p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
 
-.about-content img {
-  width: 230px;
-  border-radius: 20px;
-  border: 2px solid var(--neon);
-  box-shadow: 0 0 25px rgba(0,240,255,0.4);
-}
+    /* Projects Section */
+    #projects {
+      padding: 80px 20px;
+      text-align: center;
+    }
 
-.about-content p {
-  max-width: 550px;
-  color: var(--text-soft);
-}
+    #projects h2 {
+      margin-bottom: 50px;
+      font-size: 2rem;
+    }
 
-/* Projects */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 35px;
-}
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-.card {
-  background: var(--glass);
-  padding: 35px;
-  border-radius: 20px;
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
+    .project-card {
+      background-color: #fff8e1;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
 
-.card::before {
-  content: "";
-  position: absolute;
-  width: 150%;
-  height: 150%;
-  background: linear-gradient(45deg, transparent, rgba(0,240,255,0.15), transparent);
-  top: -50%;
-  left: -50%;
-  transform: rotate(25deg);
-  transition: 0.6s;
-}
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
 
-.card:hover::before {
-  left: 100%;
-}
+    .project-card img {
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 35px rgba(0,240,255,0.3);
-}
+    .project-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      color: #333;
+    }
 
-.card h3 {
-  margin-bottom: 15px;
-  color: var(--accent);
-}
+    .project-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
 
-.card p {
-  color: var(--text-soft);
-}
+    /* Contact Section */
+    #contact {
+      padding: 80px 20px;
+      background-color: #ffda44;
+      text-align: center;
+    }
 
-/* Contact */
-form {
-  max-width: 500px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
+    #contact h2 {
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: #333;
+    }
 
-input, textarea {
-  padding: 14px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: var(--glass);
-  color: white;
-}
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+      margin: 0 auto;
+      gap: 20px;
+    }
 
-input:focus, textarea:focus {
-  outline: none;
-  border-color: var(--neon);
-  box-shadow: 0 0 15px rgba(0,240,255,0.4);
-}
+    input, textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+    }
 
-button {
-  padding: 14px;
-  border-radius: 40px;
-  border: none;
-  background: linear-gradient(90deg, var(--neon), var(--accent));
-  color: white;
-  cursor: pointer;
-  transition: 0.4s;
-}
+    input:focus, textarea:focus {
+      outline: 2px solid #333;
+    }
 
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(255,46,99,0.5);
-}
+    button {
+      background-color: #333;
+      color: #ffda44;
+      padding: 12px;
+      font-weight: 600;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
 
-footer {
-  text-align: center;
-  padding: 30px 0;
-  color: var(--text-soft);
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
+    button:hover {
+      background-color: #ffda44;
+      color: #333;
+    }
 
-/* Responsive */
-@media(max-width:768px){
-  .hero h1 {
-    font-size: 2.2rem;
-  }
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #333;
+    }
 
-  .about-content {
-    flex-direction: column;
-  }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
 
-  nav a {
-    margin-left: 15px;
-  }
-}
-</style>
+      #about .about-container {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-  <div class="container navbar">
-    <div class="logo">Joel Joy</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero" id="home">
-  <div class="container">
-    <h1>Designing the Future of Speed</h1>
-    <p>
-      I'm Joel Joy, an Automotive Super Car Designer crafting futuristic,
-      high-performance machines that fuse aerodynamics, innovation, and bold aesthetics.
-    </p>
-    <a href="#projects" class="btn">Explore My Vision</a>
-  </div>
-</section>
-
-<section id="about">
-  <div class="container">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-content">
-      <img src="https://via.placeholder.com/230" alt="Joel Joy">
-      <p>
-        I specialize in visionary supercar concepts that push the boundaries of
-        performance engineering and futuristic design. My mission is to create
-        machines that feel alive — sculpted by airflow, powered by innovation.
-      </p>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>Joel Joy</h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="projects">
-  <div class="container">
-    <h2 class="section-title">Projects</h2>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1>Hello, I'm Joel Joy</h1>
+    <p>I'm a passionate graphic designer creating visually compelling designs inspired by creativity and bumblebee energy.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about-container">
+      <img src="https://via.placeholder.com/250" alt="Joel Joy Profile">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>Hello! I'm Joel Joy, a graphic designer who loves to blend creativity with modern design principles. I specialize in branding, digital illustrations, and UI/UX design. My inspiration comes from nature, minimalism, and vibrant colors—especially the energetic vibes of bumblebees!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>My Projects</h2>
     <div class="projects-grid">
-
-      <div class="card">
-        <h3>Velocity X Concept</h3>
-        <p>Active aerodynamic hypercar engineered for extreme downforce and hybrid performance.</p>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="Project 1">
+        <h3>Project One</h3>
+        <p>A branding project with vibrant bumblebee-inspired color schemes and modern typography.</p>
       </div>
-
-      <div class="card">
-        <h3>Phantom GT</h3>
-        <p>Luxury-performance grand tourer blending aggressive styling and intelligent cockpit systems.</p>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="Project 2">
+        <h3>Project Two</h3>
+        <p>A digital illustration series focusing on nature, energy, and playful designs.</p>
       </div>
-
-      <div class="card">
-        <h3>Nova Electric</h3>
-        <p>Next-generation electric supercar redefining speed, sustainability, and futuristic presence.</p>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="Project 3">
+        <h3>Project Three</h3>
+        <p>A UI/UX design project for a mobile app, balancing functionality with bright, cheerful aesthetics.</p>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <div class="container">
-    <h2 class="section-title">Contact Me</h2>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
     <form>
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message"></textarea>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
       <button type="submit">Send Message</button>
     </form>
-  </div>
-</section>
+  </section>
 
-<footer>
-  © 2026 Joel Joy | Automotive Super Car Designer
-</footer>
-
+  <footer>
+    &copy; 2026 Joel Joy. All rights reserved.
+  </footer>
 </body>
-</html>         
+</html>
